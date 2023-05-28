@@ -1,10 +1,14 @@
 import React from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import Home from './container/Home'
 
 const App = () => {
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Kolkata&appid=21287ce169a6a9290f46e9e5de0ee13b`
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Routes>
+        <Route path="/*" element={<Home/>} />
+    </Routes>
   )
 }
 
