@@ -1,7 +1,21 @@
 import React from 'react'
+import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
+import { getFormattedWeatherData } from '../weatherService'
+
 
 const Home = () => {
+
+  const [weather, setWeather] = useState(null);
+  const [units, setUnits] = useState('metric')
+
+    useEffect(() => {
+        const fetchWeatherData = async () => {
+            const data = await getFormattedWeatherData('kolkata', units);
+            setWeather(data);
+        }
+            fetchWeatherData();
+      }, [])
   return (
     <>
       <div className='app'>
@@ -12,16 +26,14 @@ const Home = () => {
       <div className='button'>
       <form className='form'>
         <input type='text' name='city' placeholder='Enter City...' id='myInput' />
-        <button id='myButton'>Submit</button>
+        <button id='myButton'> °</button>
       </form>
       </div>
-      <div>
-        <h1>location</h1>
-        <div className='icon' >
-        <img src='http://openweathermap.org/img/wn/02d@2x.png' alt='weatherIcon'/>
-        </div>
-        <h3>cloudy</h3>
-        <h1 className='temperature'>32 degree celsius</h1>
+      <div className='icon'>
+        <h1>{`${weather?.name}, ${weather?.country}`}</h1>
+        <img src={weather?.iconURL} alt='weatherIcon'/>
+        <h3>{weather?.description}</h3>
+        <h1 className='temperature'>{`${weather?.temp.toFixed()}° ${ units === 'metric' ? 'C' : 'F'}`}</h1>
       </div>
       </div>
       </div>
