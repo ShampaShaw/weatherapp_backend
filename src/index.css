@@ -210,26 +210,25 @@ a{color:inherit;text-decoration:none}
 }
  
 .navbar {
-    background-color: #f1f1f1;
-    padding: 10px;
-  }
-  
-  .navbar-list {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .navbar-item {
-    margin: 0 10px;
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .navbar-link:hover {
-    color: #555;
-  }
-  
+  background-color: rgba(121, 217, 224, 0.5);
+  padding: 15px;
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-item {
+  margin: 0 10px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #6a6f8c;
+}
+
+.navbar-link:hover {
+  color: #555;
+}
