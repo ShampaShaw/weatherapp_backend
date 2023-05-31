@@ -13,7 +13,7 @@ const Home = () => {
     useEffect(() => {
         const fetchWeatherData = async () => {
             const data = await getFormattedWeatherData(city, units);
-            setWeather(data);
+            console.log(data);
         }
             fetchWeatherData();
       }, [units, city])
@@ -37,7 +37,7 @@ const Home = () => {
     <>
       <div className='app'>
       <div className='overlay'> </div>
-      { weather && (
+
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
       <div className='contained'>
@@ -55,7 +55,6 @@ const Home = () => {
       </div>
       </div>
       </div>
-      )}
       </div>
     </>
   )
