@@ -1,4 +1,5 @@
 import React from 'react'
+import { UilSearch , UilLocationPoint } from '@iconscout/react-unicons'
 import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
 import { getFormattedWeatherData } from '../weatherService'
@@ -6,32 +7,11 @@ import { getFormattedWeatherData } from '../weatherService'
 
 const Home = () => {
 
-  const [city, setCity] = useState('Delhi')
-  const [weather, setWeather] = useState(null);
-  const [units, setUnits] = useState('metric')
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const fetchWeatherData = async () => {
-            const data = await getFormattedWeatherData(city, units);
-        }
-            fetchWeatherData();
-      }, [units, city])
-
-      const handleUnitClick = (e) => {
-        const button = e.currentTarget;
-        console.log(button);
-        const currentUnit = button.innerText.slice(1);
-        console.log(button);
-
-        const isCelsius = currentUnit === 'C';
-        button.innerText = isCelsius ? "°F" : "°C";
-        setUnits(isCelsius ? "metric" : "imperial")
-      }
-
-      const enterKeyPressed = (e) => {
-        if(e.keyCode === 'Enter')
-        setCity(e.currentTarget.value)
-      }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <>
@@ -41,21 +21,24 @@ const Home = () => {
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
       <div className='contained'>
-      <div className='button'>
-      <form className='form'>
-        <input value={city}
-          onChange={(e) => setCity(e.target.value)}
-          onKeyDown={enterKeyPressed}
-          placeholder='Search location'
+      <div className='flex flex-row w-3/4 justify-center space-x-4'>
+        <input 
+          type='text'
+          placeholder='Search city...'
+          className='text-xl background-color: rgba(0,0,0,0.5) justify-center items-center w-2/4 shadow-xl focus:to-blue-600 h-150 border-radius: 50% placeholder:lowercase'
           id='myInput' />
-        <button onClick={(e) => handleUnitClick(e)} className='button'> °F</button>
-      </form>
+        <UilSearch size={25} className='text-white cursor-pointer transition ease-out hover:scale-125' />
+        <UilLocationPoint size={25} className='text-white cursor-pointer transition ease-out hover:scale-125' />
       </div>
-      <div className='icon'>
-        <h1>{`${weather?.name}, ${weather?.country}`} </h1>
-        <img src={weather?.iconURL} alt='weatherIcon'/>
-        <h3>{weather?.description}</h3>
-        <h1 className='temperature'>{`${weather?.temp.toFixed()}°${ units === 'metric' ? 'C' : 'F'}`}</h1>
+      <div className='position: relative display: inline-block'>
+        <button className='background-color: #f2f2f2 border: none color: #333 cursor: cursor-pointer padding: 10px 20px' onClick={toggleMenu} > Units </button>
+        { isOpen && ( 
+          <ul className='dropdown-list'>
+            <li>°C</li>
+            <li>°F </li>
+          </ul>
+
+        )}
       </div>
       </div>
       </div>
