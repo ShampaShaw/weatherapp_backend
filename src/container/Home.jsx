@@ -13,13 +13,13 @@ const Home = () => {
     useEffect(() => {
         const fetchWeatherData = async () => {
             const data = await getFormattedWeatherData(city, units);
-            console.log(data);
         }
             fetchWeatherData();
       }, [units, city])
 
       const handleUnitClick = (e) => {
         const button = e.currentTarget;
+        console.log(button);
         const currentUnit = button.innerText.slice(1);
         console.log(button);
 
@@ -29,7 +29,7 @@ const Home = () => {
       }
 
       const enterKeyPressed = (e) => {
-        if(e.keyCode === 13)
+        if(e.keyCode === 'Enter')
         setCity(e.currentTarget.value)
       }
 
@@ -43,12 +43,16 @@ const Home = () => {
       <div className='contained'>
       <div className='button'>
       <form className='form'>
-        <input onKeyDown={enterKeyPressed} type='text' name='city' placeholder='Enter City...' id='myInput' />
+        <input value={city}
+          onChange={(e) => setCity(e.target.value)}
+          onKeyDown={enterKeyPressed}
+          placeholder='Search location'
+          id='myInput' />
         <button onClick={(e) => handleUnitClick(e)} className='button'> °F</button>
       </form>
       </div>
       <div className='icon'>
-        <h1>{`${weather?.name}, ${weather?.country}`}</h1>
+        <h1>{`${weather?.name}, ${weather?.country}`} </h1>
         <img src={weather?.iconURL} alt='weatherIcon'/>
         <h3>{weather?.description}</h3>
         <h1 className='temperature'>{`${weather?.temp.toFixed()}°${ units === 'metric' ? 'C' : 'F'}`}</h1>
