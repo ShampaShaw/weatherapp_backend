@@ -233,42 +233,4 @@ a{color:inherit;text-decoration:none}
   color: #555;
 }
 
-.dropdown-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	background-color: #f2f2f2;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-  }
-  
-  .dropdown-list li {
-	padding: 10px 20px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-  }
 
-  .dropdown-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	background-color: #f2f2f2;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-  }
-  
-  .dropdown-list li {
-	padding: 10px 20px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-  }

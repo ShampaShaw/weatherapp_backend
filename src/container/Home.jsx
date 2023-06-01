@@ -30,12 +30,12 @@ const Home = () => {
         <UilSearch size={25} className='text-white cursor-pointer transition ease-out hover:scale-125' />
         <UilLocationPoint size={25} className='text-white cursor-pointer transition ease-out hover:scale-125' />
       </div>
-      <div className='position: relative display: inline-block'>
-        <button className='background-color: #f2f2f2 border: none color: #333 cursor: cursor-pointer padding: 10px 20px' onClick={toggleMenu} > Units </button>
+      <div className='flex flex-row w-1/4 items-center justify-center'>
+        <button className='background-color: rgba(0,0,0,0.5) border: none color: #333 cursor: cursor-pointer padding: 10px 20px' onClick={toggleMenu} >Units</button>
         { isOpen && ( 
-          <ul className='dropdown-list'>
-            <li>°C</li>
-            <li>°F </li>
+          <ul className=''>
+            <li >°C</li>
+            <li >°F </li>
           </ul>
 
         )}
