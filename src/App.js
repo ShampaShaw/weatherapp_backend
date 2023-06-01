@@ -4,6 +4,7 @@ import Home from './container/Home'
 import Login from './components/login'
 import Navbar from './components/navbar'
 import Safety from './components/safety';
+
 const App = () => {
      
 
