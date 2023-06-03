@@ -23,7 +23,8 @@ const Home = () => {
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
       <div className='contained'>
-      <div className='flex flex-row w-full space-x-4 text-yellow-500 '>
+      <div className='flex flex-row w-full items-center justify-between space-x-4'>
+      <div className='flex flex-row w-full space-x-4 h-full'>
         <input 
           type='text'
           placeholder='Search city...'
@@ -31,9 +32,10 @@ const Home = () => {
           id='myInput' />
         <UilSearch size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
         <UilLocationPoint size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
+        </div>
 
-        <div className='flex flex-row items-center justify-center justify-items-end'>
-        <button className='background-color: rgba(0,0,0,0.5) border: none color: #333 cursor: cursor-pointer padding: 10px 20px text-yellow-200' onClick={toggleMenu} >Units</button>
+        <div className='flex flex-row items-center justify-center text-2xl text-teal-300'>
+        <button className='background-color: rgba(0,0,0,0.5) border-none color: #333 cursor: cursor-pointer padding: 10px 20px text-teal-300' onClick={toggleMenu} >Units</button>
         { isOpen && ( 
           <ul className='text-xl text-yellow-500 font-light'>
             <li name='metric'>°C</li>
@@ -44,7 +46,7 @@ const Home = () => {
       </div>
       </div>
         <TimeandLocation />
-        <TemperatureAndDetails />
+        <TemperatureAndDetails/>
       
       </div>
       </div>
