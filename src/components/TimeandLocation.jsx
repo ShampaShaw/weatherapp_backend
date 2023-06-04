@@ -2,13 +2,16 @@ import React from 'react'
 
 const TimeandLocation = () => {
   return (
-    <div className='TimeAndLocation flex items-center justify-between'>
-      <div className='flex justify-center items-center my-6'>
-        <p className='text-teal-300 text-xl font-extralight'>
-          Friday, 2 June 2023 | Time
-        </p>
+    <div>
+      <div className='DateAndTime'>
+        <div className='Date text-teal-300 text-xl font-extralight'>
+          Friday, 2 June 2023
+        </div>
+        <div className='Time text-teal-300 text-xl font-extralight'>
+          Time
+        </div>
       </div>
-      <div className='flex items-center justify-center my-3'>
+      <div className='Location'>
         <p className='text-teal-300 text-3xl font-medium'> Kolkata, IN</p>
       </div>
     </div>
