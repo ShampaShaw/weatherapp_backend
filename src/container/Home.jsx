@@ -23,7 +23,7 @@ const Home = () => {
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
       <div className='contained'>
-      <div className='section section_inputs my-6 w-full h-500'>
+      <div className='section section_inputs flex flex-row w-3/4 items-center justify-between space-x-4'>
         <input 
           type='text'
           placeholder='Search city...'
@@ -32,7 +32,7 @@ const Home = () => {
         <UilSearch size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
         <UilLocationPoint size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
       <div>
-      <div>
+      <div className='text-xl text-teal-300 space-y-1'>
         <button onClick={toggleMenu} >Units</button>
         { isOpen && ( 
           <ul className='text-xl text-yellow-500 font-light'>
