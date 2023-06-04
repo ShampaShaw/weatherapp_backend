@@ -3,7 +3,7 @@ import { UilSearch , UilLocationPoint } from '@iconscout/react-unicons'
 import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
 import { getFormattedWeatherData } from '../weatherService'
-import TimeandLocation from '../components/TimeandLocation'
+import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
 
 
@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <div className='app'>
-      <div className='overlay'> </div>
+      <div className='overlay'> 
 
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
@@ -35,7 +35,7 @@ const Home = () => {
         </div>
 
         <div className='flex flex-row items-center justify-center text-2xl text-teal-300'>
-        <button className='background-color: rgba(0,0,0,0.5) border-none color: #333 cursor: cursor-pointer padding: 10px 20px text-teal-300' onClick={toggleMenu} >Units</button>
+        <button className='background-color: rgba(0,0,0,0.5)  color: #333 cursor: cursor-pointer padding: 10px 20px text-teal-300' onClick={toggleMenu} >Units</button>
         { isOpen && ( 
           <ul className='text-xl text-yellow-500 font-light'>
             <li name='metric'>°C</li>
@@ -45,9 +45,10 @@ const Home = () => {
         )}
       </div>
       </div>
-        <TimeandLocation />
+        <TimeAndLocation />
         <TemperatureAndDetails/>
       
+      </div>
       </div>
       </div>
       </div>
