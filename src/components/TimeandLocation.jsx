@@ -2,7 +2,7 @@ import React from 'react'
 
 const TimeandLocation = () => {
   return (
-    <div>
+    <div className='TimeAndLocation flex items-center justify-between'>
       <div className='flex justify-center items-center my-6'>
         <p className='text-teal-300 text-xl font-extralight'>
           Friday, 2 June 2023 | Time

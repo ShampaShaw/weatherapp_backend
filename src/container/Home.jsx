@@ -23,7 +23,7 @@ const Home = () => {
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
       <div className='contained'>
-      <div className='flex flex-row w-full items-center justify-between space-x-4'>
+      <div className='search flex flex-row w-full items-center justify-between space-x-4 p-1 border-r-0.4'>
       <div className='flex flex-row w-full space-x-4 h-full'>
         <input 
           type='text'
