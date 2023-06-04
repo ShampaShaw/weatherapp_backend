@@ -62,6 +62,24 @@
 	flex-direction: column;
   }
 
+  .section {
+	width: 100%;
+	padding: 1rem;
+	border-radius: .4rem;
+
+	-webkit-border-radius: .4rem;
+	-moz-border-radius: .4rem;
+	-ms-border-radius: .4rem;
+	-o-border-radius: .4rem;
+}
+
+.section_inputs, .TimeAndLocation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(0,0,0,.7);
+}
+
   #myInput {
     margin-bottom: 10px;
     background-color: rgba(0,0,0,.5);
