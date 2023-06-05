@@ -73,12 +73,20 @@
 	-o-border-radius: .4rem;
 }
 
-.section_inputs, .TimeAndLocation, .TemperatureAndDetails {
+.section_inputs, .TemperatureAndDetails {
 	padding: 10px;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: rgba(0,0,0,.7);
+	max-height: 100dvh;
+}
+.TimeAndLocation {
+	padding: 10px;
+	width: 100%;
+	display: flex;
+	align-items: center;
 	background-color: rgba(0,0,0,.7);
 	max-height: 100dvh;
 }

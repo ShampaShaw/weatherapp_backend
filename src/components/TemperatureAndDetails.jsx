@@ -2,7 +2,7 @@ import React from 'react'
 
 const TemperatureAndDetails = () => {
   return (
-    <div className='flex justify-between'>
+    <div className='TemperatureAndDetails flex justify-between'>
 
         <div className='text-teal-300 py-3'>
             <p className='text-teal-300 text-2xl font-medium'> Kolkata, IN</p>
@@ -15,7 +15,7 @@ const TemperatureAndDetails = () => {
            
         </div>
         <div className='flex flex-row items-center justify-between text-teal-200'>
-            <p className='text-3xl'>30°C</p>
+            <p className='text-2xl'>30°C</p>
         </div>
     </div>
   )
