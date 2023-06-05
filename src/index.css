@@ -45,7 +45,7 @@
 	background-color: rgba(0,0,0,.5);
 	padding: 1rem;
 	border-radius: 0.4rem ;
-	align-items: center;
+	
 	justify-content: space-between;
 }
 
@@ -74,10 +74,12 @@
 }
 
 .section_inputs, .TimeAndLocation {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: rgba(0,0,0,.7);
+	max-height: 100dvh;
 }
 
   #myInput {

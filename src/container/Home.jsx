@@ -23,7 +23,7 @@ const Home = () => {
       <div className='video'>
         <video src={videoBG} autoPlay loop muted />
       <div className='contained'>
-      <div className='section section_inputs flex flex-row w-2/4 items-center justify-between space-x-4'>
+      <div className='section section_inputs flex flex-row w-full items-center justify-between space-x-4'>
         <input 
           type='text'
           placeholder='Search city...'
