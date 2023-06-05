@@ -5,6 +5,7 @@ import videoBG from '../assets/earth_-_8947 (540p).mp4'
 import { getFormattedWeatherData } from '../weatherService'
 import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
+import SetAndRise from '../components/SetAndRise'
 
 
 const Home = () => {
@@ -43,6 +44,9 @@ const Home = () => {
       </div>
       <div className='TemperatureAndDetails'>
         <TemperatureAndDetails/>
+      </div>
+      <div className='SetAndRise'>
+        <SetAndRise/>
       </div>
       </div>
       </div>
