@@ -10,6 +10,7 @@ const TimeAndLocation = () => {
         <div className='Time text-teal-300 text-xl font-extralight'>
           <p>Time</p>
         </div>
+        
       </div>
       
     </div>
