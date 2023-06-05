@@ -11,9 +11,7 @@ const TimeAndLocation = () => {
           Time
         </div>
       </div>
-      <div className='Location w-2/4 space-y-1 space-x-8'>
-        <p className='text-teal-300 text-3xl font-medium'> Kolkata, IN</p>
-      </div>
+      
     </div>
   )
 }

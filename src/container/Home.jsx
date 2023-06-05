@@ -31,7 +31,7 @@ const Home = () => {
           id='myInput' />
         <UilSearch size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
         <UilLocationPoint size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
-      <div className='text-xl text-teal-300 space-y-1 w-2/4' >
+      <div className='text-xl text-teal-300 space-y-1 w-2/4 padding:10px border-radius: 0.4rem backdrop-brightness-50' >
         <button onClick={toggleMenu} >Units</button>
         { isOpen && ( 
           <ul className='text-xl text-yellow-500 font-light'>
