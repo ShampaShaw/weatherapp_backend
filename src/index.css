@@ -73,7 +73,7 @@
 	-o-border-radius: .4rem;
 }
 
-.section_inputs, .TemperatureAndDetails, .SetAndRise {
+.section_inputs, .TemperatureAndDetails, .SetAndRise, .Graph {
 	padding: 10px;
 	width: 100%;
 	display: flex;

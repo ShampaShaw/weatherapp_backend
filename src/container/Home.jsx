@@ -6,6 +6,7 @@ import { getFormattedWeatherData } from '../weatherService'
 import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
 import SetAndRise from '../components/SetAndRise'
+import Graph from '../components/Graph'
 
 
 const Home = () => {
@@ -47,6 +48,9 @@ const Home = () => {
       </div>
       <div className='SetAndRise'>
         <SetAndRise/>
+      </div>
+      <div className='Graph'>
+        <Graph />
       </div>
       </div>
       </div>
