@@ -7,6 +7,8 @@ import {
   UilWind,
   UilSun,
   UilSunset,
+  Uil0Plus,
+  UilPressure,
 } from '@iconscout/react-unicons'
 
 const TemperatureAndDetails = () => {
@@ -43,6 +45,12 @@ const TemperatureAndDetails = () => {
             <UilWind size={18} className='ml-10' />
               Wind Speed:
             <span className='font-medium ml-1'>12 Km/h</span>
+          </div>
+
+          <div className='flex font-light text-sm items-center justify-center mr-11'>
+            <Uil0Plus size={18} className='' />
+              UV:
+            <span className='font-medium ml-1'>Weak</span>
           </div>
         </div>
     </div>
