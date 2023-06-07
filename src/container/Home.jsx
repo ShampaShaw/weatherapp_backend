@@ -54,7 +54,10 @@ const Home = () => {
           <Graph />
         </div>
         <div className='Forecast'>
-        <Forecast title='hourly forecast' />
+          <Forecast title='hourly forecast' />
+        </div>
+        <div className='Forecast'>
+          <Forecast title='hourly forecast' />
         </div>
       </div>
       </div>
