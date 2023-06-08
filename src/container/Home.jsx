@@ -3,7 +3,7 @@ import { UilSearch , UilLocationPoint } from '@iconscout/react-unicons'
 import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
 import weatherbg from '../assets/weatherwallpaper.jpg';
-import { getFormattedWeatherData } from '../weatherService'
+import getFormattedWeatherData from '../weatherService'
 import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
 import SetAndRise from '../components/SetAndRise'
@@ -12,6 +12,13 @@ import Forecast from '../components/Forecast'
 
 
 const Home = () => {
+
+  const fetchWeather = async () => {
+    const data = await getFormattedWeatherData({q: "london"});
+    console.log(data);
+  }
+
+  fetchWeather();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,9 +57,8 @@ const Home = () => {
         </div>
         </div>
         </div>
-    <div className='image w-full h-screen'>
-
-      <img src={weatherbg} />
+   
+      
         <div className='SetAndRise'>
         <SetAndRise/>
       </div>
@@ -65,12 +71,8 @@ const Home = () => {
       <div className='Forecast'>
         <Forecast title='hourly forecast' />
       </div>
+      </div>
     </div>
-        
-      
-     
-      </div>
-      </div>
     </>
   )
 }

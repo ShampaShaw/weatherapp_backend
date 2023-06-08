@@ -1,9 +1,71 @@
-const API_KEY= '94d8a95d52697e9a3f45ce94d5bdb711'
+const API_KEY= '21287ce169a6a9290f46e9e5de0ee13b'
 
-const makeIconURL = (iconId) =>`http://openweathermap.org/img/wn/${iconId}@2x.png`
+const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 
-const getFormattedWeatherData = async ( city , cnt=14, units = 'metric') => {
-    const URL = `api.openweathermap.org/data/2.5/forecast/daily?id=${city}&cnt=${cnt}&appid={API_KEY}&units=${units}`
+const getWeatherData = (infoType, searchParams) => {
+    const url = new URL(BASE_URL + '/' + infoType)
+
+    url.search = new URLSearchParams({...searchParams, appid: API_KEY});
+
+    return fetch(url)
+    .then((res) => res.json())
+
+}
+
+const formatCurrentWeather = (data) => {
+    const {
+
+        coord: {lat, lon},
+        weather, 
+        main: {temp, feels_like, temp_min, temp_max, pressure, humidity},
+
+        sys: {
+            country,
+            sunset,
+            sunrise
+        },
+        wind: {speed},
+        name,
+        dt,
+    } = data
+
+    const { main: details , icon} = weather[0]
+
+    return {
+        lat,
+        lon,
+        temp, 
+        feels_like, 
+        temp_max, 
+        temp_min,
+        pressure, 
+        humidity,
+        country, 
+        sunset, 
+        sunrise, 
+        speed, 
+        name,
+        dt,
+        details,
+        icon
+    }
+}
+
+const getFormattedWeatherData = async (searchParams) => {
+
+    const getFormattedCurrentWeatherData = await getWeatherData("weather", searchParams)
+    .then(formatCurrentWeather)
+    return getFormattedCurrentWeatherData
+
+}
+
+
+export default getFormattedWeatherData
+
+/*const makeIconURL = (iconId) =>`http://openweathermap.org/img/wn/${iconId}@2x.png`
+
+const getFormattedWeatherData = async ( city ,cnt=14, units = 'metric') => {
+    const URL = `api.openweathermap.org/data/2.5/weather?id=${city}&cnt=${cnt}&appid={API_KEY}&units=${units}`
     //const URL= `https:/api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${units}`
 
     const data = await fetch(URL)
@@ -42,4 +104,4 @@ const getFormattedWeatherData = async ( city , cnt=14, units = 'metric') => {
     }
 }
 
-export { getFormattedWeatherData };
+export { getFormattedWeatherData }; */
