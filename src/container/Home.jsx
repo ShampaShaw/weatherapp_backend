@@ -2,6 +2,7 @@ import React from 'react'
 import { UilSearch , UilLocationPoint } from '@iconscout/react-unicons'
 import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
+import weatherbg from '../assets/weatherwallpaper.jpg';
 import { getFormattedWeatherData } from '../weatherService'
 import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
@@ -47,20 +48,27 @@ const Home = () => {
         <div className='TemperatureAndDetails'>
         <TemperatureAndDetails/>
         </div>
+        </div>
+        </div>
+    <div className='image w-full h-screen'>
+
+      <img src={weatherbg} />
         <div className='SetAndRise'>
-          <SetAndRise/>
-        </div>
-        <div className='Graph'>
-          <Graph />
-        </div>
-        <div className='Forecast'>
-          <Forecast title='hourly forecast' />
-        </div>
-        <div className='Forecast'>
-          <Forecast title='hourly forecast' />
-        </div>
+        <SetAndRise/>
       </div>
+      <div className='Graph'>
+        <Graph />
       </div>
+      <div className='Forecast'>
+        <Forecast title='hourly forecast' />
+      </div>
+      <div className='Forecast'>
+        <Forecast title='hourly forecast' />
+      </div>
+    </div>
+        
+      
+     
       </div>
       </div>
     </>
