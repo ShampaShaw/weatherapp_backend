@@ -1,28 +1,66 @@
 import React from 'react'
 import {
-    UilSun,
-    UilSunset,
-    UilArrowUp,
-    UilArrowDown,
-} from '@iconscout/react-unicons';
+  UilArrowUp,
+  UilArrowDown,
+  UilTemperature,
+  UilTear,
+  UilWind,
+  UilSun,
+  UilSunset,
+  Uil0Plus,
+  UilPressure,
+} from '@iconscout/react-unicons'
 
 const SetAndRise = () => {
   return (
-    <div className='flex flex-row items-center justify-center space-x-2 text-teal-300 text-sm py-2'>
-        <UilSun />
-        <p className='font-light'>Rise: <span>06:10 AM</span></p>
-        <p className='font-light'>|</p>
+    <div className='section section_description text-teal-300'>
+      <div className='card'>
+        <div className='description_card_icon flex flex-row'>
+          <UilArrowUp />
+          <small>max</small>
+        </div>
+        <h2>32°C</h2>
+      </div> 
 
-        <UilSunset />
-        <p className='font-light'>Set: <span>06:10 PM</span></p>
-        <p className='font-light'>|</p>
+      <div className='card'>
+        <div className='description_card_icon flex flex-row'>
+          <UilArrowDown />
+          <small>min</small>
+        </div>
+        <h2>32°C</h2>
+      </div> 
 
-        <UilArrowUp />
-        <p className='font-light'>High: <span>40°</span></p>
-        <p className='font-light'>|</p>
+      <div className='card'>
+        <div className='description_card_icon flex flex-row'>
+          <UilWind />
+          <small>Speed</small>
+        </div>
+        <h2>30Km/h</h2>
+      </div> 
 
-        <UilArrowDown />
-        <p className='font-light'>Low: <span>29°</span></p>
+      <div className='card'>
+        <div className='description_card_icon flex flex-row'>
+          <UilTear />
+          <small>min</small>
+        </div>
+        <h2>32°C</h2>
+      </div> 
+
+      <div className='card'>
+        <div className='description_card_icon flex flex-row'>
+          <Uil0Plus />
+          <small>UV</small>
+        </div>
+        <h2>Strong</h2>
+      </div> 
+
+      <div className='card'>
+        <div className='description_card_icon flex flex-row'>
+          <UilTear />
+          <small></small>
+        </div>
+        <h2>32°C</h2>
+      </div> 
     </div>
   )
 }

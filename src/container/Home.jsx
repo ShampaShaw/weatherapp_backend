@@ -38,7 +38,7 @@ const Home = () => {
           <input 
             type='text'
             placeholder='Search city...'
-            className='text-xl background-color: rgba(0,0,0,0.5) justify-center items-center w-2/4 shadow-xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full placeholder:lowercase'
+            className='text-xl background-color: rgba(0,0,0,0.5) justify-center items-center w-2/4 shadow-xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 rounded-full placeholder:lowercase'
             id='myInput' />
           <UilSearch size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
           <UilLocationPoint size={25} className='text-white cursor-pointer transition ease-out hover:scale-125 items-center justify-center h-full' />
@@ -49,28 +49,14 @@ const Home = () => {
         </div>  
         
         </div>  
-        <div>
-          <TimeAndLocation />
-        </div>
         <div className='TemperatureAndDetails'>
-        <TemperatureAndDetails/>
+          <TemperatureAndDetails />
         </div>
-        </div>
-        </div>
-   
-      
-        <div className='SetAndRise'>
+        <div>
         <SetAndRise/>
       </div>
-      <div className='Graph'>
-        <Graph />
-      </div>
-      <div className='Forecast'>
-        <Forecast title='hourly forecast' />
-      </div>
-      <div className='Forecast'>
-        <Forecast title='hourly forecast' />
-      </div>
+        </div>
+        </div>
       </div>
     </div>
     </>
