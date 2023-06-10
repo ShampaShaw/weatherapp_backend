@@ -41,9 +41,9 @@ const SetAndRise = () => {
       <div className='card'>
         <div className='description_card_icon flex flex-row'>
           <UilTear />
-          <small>min</small>
+          <small>Humidity</small>
         </div>
-        <h2>32°C</h2>
+        <h2>41%</h2>
       </div> 
 
       <div className='card'>
@@ -57,9 +57,9 @@ const SetAndRise = () => {
       <div className='card'>
         <div className='description_card_icon flex flex-row'>
           <UilTear />
-          <small></small>
+          <small>Pressure</small>
         </div>
-        <h2>32°C</h2>
+        <h2>1097</h2>
       </div> 
     </div>
   )

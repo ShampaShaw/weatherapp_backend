@@ -5,6 +5,7 @@ import {
   UilArrowUp,
   UilArrowDown,
 } from '@iconscout/react-unicons';
+import { getFormattedWeatherDta } from '../weatherService'
 
 const TimeAndLocation = () => {
   return (
@@ -20,7 +21,7 @@ const TimeAndLocation = () => {
       </div>
       <div className='flex flex-row items-center justify-center space-x-2 text-teal-300 text-sm py-0 '>
       <UilSun />
-        <p className='font-light'>Rise: <span>06:10 AM</span></p>
+        <p className='font-light'>Rise: <span>SunriseAM</span></p>
         
 
         <UilSunset />

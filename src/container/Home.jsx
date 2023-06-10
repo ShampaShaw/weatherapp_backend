@@ -3,36 +3,37 @@ import { UilSearch , UilLocationPoint } from '@iconscout/react-unicons'
 import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
 import weatherbg from '../assets/weatherwallpaper.jpg';
-import getFormattedWeatherData from '../weatherService'
+import { getFormattedWeatherData } from '../weatherService'
 import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
 import SetAndRise from '../components/SetAndRise'
 import Graph from '../components/Graph'
 import Forecast from '../components/Forecast'
+import SunsetAndRise from '../components/SunsetAndRise';
 
 
 const Home = () => {
 
-  const fetchWeather = async () => {
-    const data = await getFormattedWeatherData({q: "london"});
-    console.log(data);
-  }
+  const [weather, setWeather] = useState(null);
 
-  fetchWeather();
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  }
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const data = await getFormattedWeatherData("london");
+        setWeather(data);
+    }
+  
+    fetchWeather();
+  },[])
 
   return (
     <>
       <div className='app'>
         <div className='overlay'> 
 
-        <div className='video'>
-          <video src={videoBG} autoPlay loop muted />
+        
+
+          <div className='video'>
+        <video src={videoBG} autoPlay loop muted />
         <div className='contained'>
         <div className='section section_inputs flex flex-row w-full items-center justify-between space-x-4'>
           <input 
@@ -57,6 +58,8 @@ const Home = () => {
       </div>
         </div>
         </div>
+
+        
       </div>
     </div>
     </>
