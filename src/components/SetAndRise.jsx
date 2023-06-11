@@ -7,11 +7,12 @@ import {
   UilWind,
   UilSun,
   UilSunset,
-  Uil0Plus,
+  Uil6Plus,
   UilPressure,
+  UilEye,
 } from '@iconscout/react-unicons'
 
-const SetAndRise = () => {
+const SetAndRise = ({ weather: {temp_max, temp_min, speed, humidity, pressure, visibility}}) => {
   return (
     <div className='section section_description text-teal-300'>
       <div className='card'>
@@ -19,7 +20,7 @@ const SetAndRise = () => {
           <UilArrowUp />
           <small>max</small>
         </div>
-        <h2>32°C</h2>
+        <h2>{`${temp_max}`}</h2>
       </div> 
 
       <div className='card'>
@@ -27,7 +28,7 @@ const SetAndRise = () => {
           <UilArrowDown />
           <small>min</small>
         </div>
-        <h2>32°C</h2>
+        <h2>{`${temp_min}`}</h2>
       </div> 
 
       <div className='card'>
@@ -35,7 +36,7 @@ const SetAndRise = () => {
           <UilWind />
           <small>Speed</small>
         </div>
-        <h2>30Km/h</h2>
+        <h2>{`${speed}`}Km/h</h2>
       </div> 
 
       <div className='card'>
@@ -43,23 +44,23 @@ const SetAndRise = () => {
           <UilTear />
           <small>Humidity</small>
         </div>
-        <h2>41%</h2>
+        <h2>{`${humidity}`}%</h2>
       </div> 
 
       <div className='card'>
         <div className='description_card_icon flex flex-row'>
-          <Uil0Plus />
-          <small>UV</small>
+          <UilEye />
+          <small>Visibility</small>
         </div>
-        <h2>Strong</h2>
+        <h2>{`${visibility}`} m</h2>
       </div> 
 
       <div className='card'>
         <div className='description_card_icon flex flex-row'>
-          <UilTear />
+          <Uil6Plus />
           <small>Pressure</small>
         </div>
-        <h2>1097</h2>
+        <h2>{`${pressure}`}</h2>
       </div> 
     </div>
   )

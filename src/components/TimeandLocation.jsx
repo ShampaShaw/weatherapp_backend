@@ -7,7 +7,7 @@ import {
 } from '@iconscout/react-unicons';
 import { getFormattedWeatherDta } from '../weatherService'
 
-const TimeAndLocation = () => {
+const TimeAndLocation = ({weather: {dt, timezone, sunrise, sunset} }) => {
   return (
     <div className='justify-center'>
       <div className='DateAndTime w-full h-full space-y-2 justify-center items-center flex flex-col'>
@@ -21,11 +21,11 @@ const TimeAndLocation = () => {
       </div>
       <div className='flex flex-row items-center justify-center space-x-2 text-teal-300 text-sm py-0 '>
       <UilSun />
-        <p className='font-light'>Rise: <span>SunriseAM</span></p>
+        <p className='font-light'>Rise: <span>{`${sunrise}`}AM</span></p>
         
 
         <UilSunset />
-        <p className='font-light'>Set: <span>06:10 PM</span></p>
+        <p className='font-light'>Set: <span>{`${sunset}`}PM</span></p>
       
 
       </div>

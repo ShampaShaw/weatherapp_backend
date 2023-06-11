@@ -11,35 +11,35 @@ import {
   UilPressure,
 } from '@iconscout/react-unicons'
 import TimeAndLocation from './TimeAndLocation'
-import { getFormattedWeatherData } from '../weatherService'
+import { getFormattedWeatherData, iconUrlFromCode } from '../weatherService'
 import weather from '../container/Home'
 
-const TemperatureAndDetails = () => {
+const TemperatureAndDetails = ({ weather: {name, country,icon, temp, feels_like,details}}) => {
   return (
     <div className='TemperatureAndDetails flex justify-between py-0'>
 
         <div className='text-teal-300 py-3'>
-            <p className='text-teal-300 text-2xl font-medium'>`&{weather.name}, ${weather.country}`</p>
+            <p className='text-teal-300 text-2xl font-medium'>{`${name}, ${country}`}</p>
             <img
-                src='http://openweathermap.org/img/wn/01d@2x.png'
+                src={ iconUrlFromCode(icon)}
                 alt=''
                 className='w-20'
             />
-            <p>Haze</p>
+            <p>{`${details}`}</p>
            
         </div>
         <div className='flex flex-col items-center justify-between text-teal-300 space-y-10'>
-            <p className='text-3xl'>30°C</p>
+            <p className='text-3xl'>{`${temp}`}</p>
             <div className='flex flex-row justify-center items-center text-sm py-0 space-x-2 '>
             <div className='description_card_icon flex flex-row'>
             <UilTemperature />
             <small>Feels Like: </small>
           </div>
-          <h2 className='text-sm'>32°C</h2>
+          <h2 className='text-sm'>{`${feels_like}`}</h2>
             </div>
         </div>
         <div className='flex flex-col space-y-2'>
-          <TimeAndLocation />
+          <TimeAndLocation weather={weather} />
         </div>
     </div>
   )

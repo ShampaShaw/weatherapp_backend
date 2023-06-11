@@ -3,7 +3,7 @@ import { UilSearch , UilLocationPoint } from '@iconscout/react-unicons'
 import { useState, useEffect} from 'react'
 import videoBG from '../assets/earth_-_8947 (540p).mp4'
 import weatherbg from '../assets/weatherwallpaper.jpg';
-import { getFormattedWeatherData } from '../weatherService'
+import getFormattedWeatherData from '../weatherService'
 import TimeAndLocation from '../components/TimeAndLocation'
 import TemperatureAndDetails from '../components/TemperatureAndDetails'
 import SetAndRise from '../components/SetAndRise'
@@ -14,16 +14,17 @@ import SunsetAndRise from '../components/SunsetAndRise';
 
 const Home = () => {
 
+  const [query, setQuery] = useState({ q: "berlin"})
+  const [units, setUnits] = useState("metric")
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const data = await getFormattedWeatherData("london");
-        setWeather(data);
+      await getFormattedWeatherData({...query, units}).then((data) => {setWeather(data)})
     }
-  
+    
     fetchWeather();
-  },[])
+  },[query, units])
 
   return (
     <>
@@ -35,7 +36,8 @@ const Home = () => {
           <div className='video'>
         <video src={videoBG} autoPlay loop muted />
         <div className='contained'>
-        <div className='section section_inputs flex flex-row w-full items-center justify-between space-x-4'>
+
+          <div className='section section_inputs flex flex-row w-full items-center justify-between space-x-4'>
           <input 
             type='text'
             placeholder='Search city...'
@@ -50,16 +52,19 @@ const Home = () => {
         </div>  
         
         </div>  
-        <div className='TemperatureAndDetails'>
-          <TemperatureAndDetails />
+        { weather && (
+            <div> 
+            <div className='TemperatureAndDetails'>
+          <TemperatureAndDetails weather={weather} />
         </div>
         <div>
-        <SetAndRise/>
+        <SetAndRise weather={weather}/>
       </div>
+            </div>
+        )}
+          
         </div>
         </div>
-
-        
       </div>
     </div>
     </>
