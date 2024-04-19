@@ -103,3 +103,50 @@
 .temperature>h1 {
 	font-size: 60px;
 }
+
+.section__inputs>button {
+    padding: 8px 40px;
+    font-size: 18px;
+}
+
+.temperature>h1 {
+    font-size: 40px;
+}
+
+@media screen and (max-width: 780px) { 
+	.container { padding: 0.5rem; }
+	.section__inputs>button {
+		padding: 8px 40px;
+		font-size: 18px;
+	}
+	
+	.temperature>h1 {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		padding: 0.5rem;
+	}
+	.section__inputs>button {
+		padding: 6px 30px;
+		font-size: 16px;
+	}
+	.temperature>h1 {
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.container {
+		padding: 0.4rem;
+	}
+	.section__inputs>button {
+		padding: 5px 25px;
+		font-size: 16px;
+	}
+	.temperature>h1 {
+		font-size: 25px;
+	}
+}
